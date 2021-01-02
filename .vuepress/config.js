@@ -5,8 +5,8 @@ module.exports = {
     themeConfig: {
         sidebar: [
             ['/', 'Introduction'],
-            // '/docs/development',
-            // '/docs/architecture',
+            '/docs/development',
+            '/docs/architecture',
             // '/docs/tech',
             // '/docs/routing',
             // '/docs/state',
