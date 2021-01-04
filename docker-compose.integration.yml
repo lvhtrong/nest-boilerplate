@@ -1,10 +1,13 @@
 version: '2'
 services:
-  api-process-engine:
+  api:
     build:
       context: .
       dockerfile: Dockerfile.dev
     container_name: ${DOCKER_CONTAINER_NAME}
+    env_file:
+      - .env
+      - .env.integration
     environment:
       NODE_ENV: "integration"
     ports:
