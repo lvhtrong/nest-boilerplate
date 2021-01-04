@@ -21,7 +21,13 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "docs:dev": "vuepress dev -p 7070",
     "docker:dev": "docker-compose -f docker-compose.dev.yml up",
-    "docker:integration": "docker-compose -f docker-compose.integration.yml up"
+    "docker:integration": "docker-compose -f docker-compose.integration.yml up",
+    "migrate:create": "migrate-mongo create",
+    "migrate:status": "migrate-mongo status",
+    "migrate:up": "migrate-mongo up -f migrate-mongo-config.js",
+    "migrate:down": "migrate-mongo down -f migrate-mongo-config.js",
+    "migrate:up:dev": "migrate-mongo up -f migrate-mongo-config.dev.js",
+    "migrate:down:dev": "migrate-mongo down -f migrate-mongo-config.dev.js"
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
