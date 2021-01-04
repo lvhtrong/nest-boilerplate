@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api-process-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: ${DOCKER_CONTAINER_NAME}
+    ports:
+      - "${DOCKER_PORT}:${PORT}"
+    volumes:
+      - ./:/home/node/app
+    networks:
+      - crm-network
+    restart: always
+    command: npm run start:dev
+networks:
+  crm-network:
+    external:
+      name: ${CRM_NETWORK}
